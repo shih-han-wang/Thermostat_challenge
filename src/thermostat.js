@@ -1,13 +1,15 @@
+'use strict';
+
 var Thermostat = function(){
   this.degree = 20;
-  this.saving_mode = true;
+  this.savingMode = true;
 };
 
 Thermostat.prototype.up = function(){
-  if(this.saving_mode === true && this.degree < 25){
+  if(this.savingMode === true && this.degree < 25){
     this.degree++
   }
-  if(this.saving_mode === false && this.degree < 35){
+  if(this.savingMode === false && this.degree < 32){
     this.degree++
   }
   else{
@@ -28,11 +30,11 @@ Thermostat.prototype.reset = function(){
   this.degree = 20;
 };
 
-Thermostat.prototype.current_energy_usage = function(usage){
-  if(usage < 18){
+Thermostat.prototype.currentEnergyUsage = function(){
+  if(this.degree < 18){
     return 'low-usage'
   }
-  if(usage >= 18 && usage < 25){
+  if(this.degree >= 18 && this.degree < 25){
     return 'medium-usage'
   }
   else{
