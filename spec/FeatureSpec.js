@@ -26,7 +26,7 @@ describe('Thermostat', function() {
           thermostat4 = new Thermostat();
           var times = 11;
           for(var i=0; i < times; i++){
-            thermostat4.down()
+            thermostat4.down();
           };
          expect(thermostat4.degree).toEqual(10);
         });
@@ -38,7 +38,7 @@ describe('Thermostat', function() {
           thermostat5 = new Thermostat();
           var times = 6;
           for(var i=0; i < times; i++){
-            thermostat5.up()
+            thermostat5.up();
           };
          expect(thermostat5.degree).toEqual(25);
         });
@@ -48,7 +48,7 @@ describe('Thermostat', function() {
           thermostat6.saving_mode = false
           var times = 16;
           for(var i=0; i < times; i++){
-            thermostat6.up()
+            thermostat6.up();
           };
          expect(thermostat6.degree).toEqual(35);
         });
@@ -60,11 +60,29 @@ describe('Thermostat', function() {
           thermostat7 = new Thermostat();
           var times = 5;
           for(var i=0; i < times; i++){
-            thermostat5.up()
+            thermostat7.up()
           };
-          thermostat7.reset
+          thermostat7.reset();
          expect(thermostat7.degree).toEqual(20);
         });
+     });
+
+     describe('current energy usage', function() {
+        it('less than 18 is low', function() {
+          var thermostat8 = new Thermostat();
+         expect(thermostat8.current_energy_usage(16)).toMatch('low-usage');
+        });
+
+        it('between 18 and 25 is medium', function() {
+          thermostat9 = new Thermostat();
+         expect(thermostat9.current_energy_usage(20)).toMatch('medium-usage');
+        });
+
+        it('more than 25 is high ', function() {
+          thermostat10 = new Thermostat();
+         expect(thermostat10.current_energy_usage(55)).toMatch('high-usage');
+        });
+
      });
 
 });
