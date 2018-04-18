@@ -13,7 +13,7 @@ Thermostat.prototype.currentDegree = function(){
   return this._degree;
 };
 
-Thermostat.prototype._isMinimumTemperature = function(){
+Thermostat.prototype.isMinimumTemperature = function(){
   return this._degree === this.MINIMUM_TEMPERATURE;
 };
 
@@ -24,6 +24,20 @@ Thermostat.prototype.isPowerSavingModeOn = function() {
 Thermostat.prototype.switchPowerSavingModeOff = function() {
   this._savingMode = false;
 }
+
+Thermostat.prototype.switchPowerSavingModeOn = function() {
+  if(this.currentDegree() > this.MAX_LIMIT_PSM_ON ){
+    return;
+  }
+  this._savingMode = true;
+}
+
+Thermostat.prototype.powerSavingMode = function(){
+  if(this.isPowerSavingModeOn()){
+    return 'on'
+  }
+  return 'off'
+};
 
 Thermostat.prototype.isMaximumTemperature = function() {
   if (this.isPowerSavingModeOn() === false) {
@@ -40,7 +54,7 @@ Thermostat.prototype.up = function(){
 };
 
 Thermostat.prototype.down = function(){
-  if(this._isMinimumTemperature()){
+  if(this.isMinimumTemperature()){
     return;
   }
   this._degree--
