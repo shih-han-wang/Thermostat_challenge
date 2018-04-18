@@ -10,19 +10,19 @@ describe('Thermostat', function() {
 
      describe('starts at', function() {
         it('20 degree', function() {
-         expect(thermostat.degree).toEqual(20);
+         expect(thermostat.currentDegree()).toEqual(20);
        });
      });
 
      describe('change the temperature by', function() {
         it('increase', function() {
           thermostat.up();
-          expect(thermostat.degree).toEqual(21);
+          expect(thermostat.currentDegree()).toEqual(21);
         });
 
         it('decrease', function() {
           thermostat.down();
-         expect(thermostat.degree).toEqual(19);
+         expect(thermostat.currentDegree()).toEqual(19);
         });
      });
 
@@ -32,7 +32,7 @@ describe('Thermostat', function() {
           for(var i=0; i < times; i++){
             thermostat.down();
           };
-         expect(thermostat.degree).toEqual(10);
+         expect(thermostat.currentDegree()).toEqual(10);
         });
      });
 
@@ -42,15 +42,15 @@ describe('Thermostat', function() {
           for(var i=0; i < 8; i++){
             thermostat.up();
           };
-         expect(thermostat.degree).toEqual(25);
+         expect(thermostat.currentDegree()).toEqual(25);
         });
 
-        it('is 35 when saving mode is off', function() {
-          thermostat.savingMode = false
+        it('is 32 when saving mode is off', function() {
+          thermostat.switchPowerSavingModeOff()
           for(var i=0; i < 15; i++){
             thermostat.up();
           };
-         expect(thermostat.degree).toEqual(32);
+         expect(thermostat.currentDegree()).toEqual(32);
         });
 
      });
@@ -61,7 +61,7 @@ describe('Thermostat', function() {
             thermostat.up()
           };
           thermostat.reset();
-         expect(thermostat.degree).toEqual(20);
+         expect(thermostat.currentDegree()).toEqual(20);
         });
      });
 
