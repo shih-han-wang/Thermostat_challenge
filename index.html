@@ -7,16 +7,33 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="src/thermostat.js"></script>
-        <script src="src/interface.js"></script>
+    <script src="src/interface.js"></script>
     <section>
       <p>
-        <h1 id="degree"></h1>
-        <button id="degree-up">+</button>
-        <button id="degree-down">-</button>
-        <button id="degree-reset">reset</button>
-        power saving mode is <span id="prower-saving-mode"></span>
-        <button id="PSM-on">PSM on</button>
-        <button id="PSM-off">PSM off</button>
+        <h1 id="degree"></h1><br/>
+        <button id="degree-up">+</button><br/>
+        <button id="degree-down">-</button><br/>
+        <button id="degree-reset">reset</button><br/>
+        power saving mode is <span id="prower-saving-mode"></span><br/>
+        <button id="PSM-on">PSM on</button><br/>
+        <button id="PSM-off">PSM off</button><br/>
+
+        <div>
+        Current temperature in
+        <select id="current-city">
+          <option value='london' selected>London</option>
+          <option value='edinburgh'>Edinburgh</option>
+          <option value='paris'>Paris</option>
+          <option value='taipei'>Taipei</option>
+          <option value='tokyo'>Tokyo</option>
+        </select>
+        is: <span id="current-temperature"></span>
+      </div>
+
+
+
+
+
       </p>
     </section>
 
