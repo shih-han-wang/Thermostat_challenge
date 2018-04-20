@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 var Thermostat = function(){
   this._degree = 20;
   this._savingMode = true;
@@ -34,9 +36,9 @@ Thermostat.prototype.switchPowerSavingModeOn = function() {
 
 Thermostat.prototype.powerSavingMode = function(){
   if(this.isPowerSavingModeOn()){
-    return 'on'
+    return 'PSM is on'
   }
-  return 'off'
+  return 'PSM is off'
 };
 
 Thermostat.prototype.isMaximumTemperature = function() {

@@ -1,0 +1,57 @@
+
+body {
+  background-color: #fafafa;
+}
+
+h1{
+  background-color: rgba(9, 8, 8, 0.81);
+  color: #fafafa;
+}
+
+h2{
+  background-color: rgba(9, 8, 8, 0.81);
+  color: rgba(112, 161, 226, 0.91);
+  text-align: right;
+}
+
+h3{
+  background-color: rgba(9, 8, 8, 0.81);
+  color: rgba(112, 161, 226, 0.91);
+  font-size: 36px;
+}
+
+#degree{
+  text-align: right;
+  padding-right: 20px;
+}
+
+#current-city{
+  background-color: rgba(9, 8, 8, 0.81);
+  color:rgb(173, 168, 175)
+}
+
+.low-usage{
+  color: rgb(73, 184, 157);
+}
+
+.medium-usage{
+  color: rgb(188, 174, 208);
+}
+
+.high-usage{
+  color: rgb(184, 10, 84);
+}
+
+.on{
+  font-size: 24px;
+  background-color: rgba(0, 130, 91, 0.74);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.off{
+  font-size: 24px;
+  background-color: rgba(232, 0, 0, 0.74);
+  padding-left: 20px;
+  padding-right: 20px;
+}

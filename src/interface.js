@@ -37,18 +37,12 @@ $(document).ready(function(){
 
   function degreeUpdate(){
     $("#degree").text(thermostat.currentDegree())
-
-    if(thermostat.currentEnergyUsage() === 'low-usage'){
-      $("#degree").css("color", "green")
-    }else if(thermostat.currentEnergyUsage() === 'medium-usage'){
-      $("#degree").css("color", "purple")
-    }else{
-      $("#degree").css("color", "red")
-    };
+    $("#degree").attr('class', thermostat.currentEnergyUsage())
   };
 
   function savingModeUpdate(){
       $("#prower-saving-mode").text(thermostat.powerSavingMode())
+      $("#prower-saving-mode").attr('class', thermostat.powerSavingMode())
   };
 
   function displayCity(city){
@@ -59,4 +53,8 @@ $(document).ready(function(){
       $('#current-temperature').text(data.main.temp);
     });
   };
+
+
+  // $().button('toggle')
+  // $().button('dispose')
 });
